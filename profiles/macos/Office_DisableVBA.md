@@ -1,6 +1,7 @@
 # Disable Microsoft Office VBA macros on macOS via a custom profile.
-# In Workspace ONE UEM console, create a custom profile and paste the below code into the custom settings field
-# Configuration reference: https://learn.microsoft.com/en-us/deployoffice/mac/set-preference-macro-security-office-for-mac
+In Workspace ONE UEM console, create a custom profile and paste the below code into the custom settings field.
+
+Configuration reference: https://learn.microsoft.com/en-us/deployoffice/mac/set-preference-macro-security-office-for-mac
 
 <dict>
 	<key>PayloadDisplayName</key>
