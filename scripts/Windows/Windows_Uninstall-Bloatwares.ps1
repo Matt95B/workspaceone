@@ -6,8 +6,8 @@
 
 <#
 ************************
-Preparation work to update the AppPatterns array
-Run the below commands to get a full list of Appx that are pre-installed in Windows and then decide which one you want to remove, paste the app name in the $AppPatterns array.
+Preparation work to update the $AppPatterns array
+Run the below commands on a factory restored PC to get a full list of Appx that are pre-installed in Windows and then decide which one you want to remove. Paste the app name in the $AppPatterns array below.
 
 $ListOfApps = Get-AppxPackage -AllUsers
 $ListOfApps | Select-Object -Property Name, PackageFullName
@@ -32,6 +32,7 @@ foreach ($pattern in $AppPatterns) {
 
     $AppsToRemove = $ListOfApps | Where-Object { $_.PackageFullName -like $pattern }
     
+    # Remove matching apps
     if ($AppsToRemove) {
         foreach ($app in $AppsToRemove) {
             Write-Host "Removing: $($app.PackageFullName)"
